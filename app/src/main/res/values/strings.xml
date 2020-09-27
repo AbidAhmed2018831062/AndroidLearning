@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">As Learning</string>
+    <string-array name="co">
+        <item>Date Picker</item>
+        <item>Time Picker</item>
+        <item>Alert Dialog</item>
+        <item>Custom Toast</item>
+        <item>Intent</item>
+        <item>Data Reciving</item>
+        <item>Custom Adapter</item>
+        <item>Menu</item>
+        <item>ActionBar Search View</item>
+        <item>Converting WebSite into App</item>
+        <item>Spinner</item>
+        <item>Media Player</item>
+        <item>Share App(Code)</item>
+        <item>Feedback(Code)</item>
+        <item>AutoComplete TextView</item>
+        <item>Expandable List View</item>
+        <item>Fragment</item>
+        <item>Card Design</item>
+        <item>Swipe Tab</item>
+        <item>Shared Preference</item>
+        <item>Data Saving In File</item>
+        <item>Creating Table In Sql</item>
+        <item>Inserting Data In Sql</item>
+        <item>Updating Data In Sql</item>
+        <item>Deleting Data In Sql</item>
+        <item>Reading Data In Sql</item>
+        <item>Recycler View</item>
+    </string-array>
+    <string-array name="child">
+        <item>Android Date Picker allows you to select the date consisting of day, month and year in your custom user interface. For this functionality android provides DatePicker and DatePickerDialog components.</item>
+        <item>Time pickers allow users to enter a specific time value. They can be used for a wide range of scenarios. Common use cases include: Setting an alarm. Scheduling a meeting.</item>
+        <item>Android alert dialog with Two Button. The following code will create alert dialog with two button. setPositiveButton() is used to create a positive button in alert dialog and setNegativeButton() is used to invoke negative button to alert dialog.</item>
+        <item>If a simple text message isnt enough, you can create a customized layout for your toast notification. To create a custom layout, define a View layout, in XML or in your application code, and pass the root View object to the setView(View) method. </item>
+        <item>Android Intent is the message that is passed between components such as activities, content providers, broadcast receivers, services etc. It is generally used with startActivity() method to invoke activity, broadcast receivers etc. The dictionary meaning of intent is intention or purpose.</item>
+        <item>If you want to recieve data from the activity you went from current activity.Than this code is useful</item>
+        <item> An input custom adapter implementation receives raw event data from an external component, converts the data into events, and sends the events to the next application node.</item>
+        <item>Defining a Menu in XML. For all menu types, Android provides a standard XML format to define menu items. Instead of building a menu in your activitys code, you should define a menu and all its items in an XML menu resource.</item>
+        <item>A widget that provides a user interface for the user to enter a search query and submit a request to a search provider. Shows a list of query suggestions or results, if available, and allows the user to pick a suggestion or result to launch into.</item>
+        <item>To convert Your website into an android app.This is the most awesome feature of Android according to me.</item>
+        <item>Mostly known as dropdown list.spinner shows its currently selected value. Touching the spinner displays a dropdown menu with all other available values, from which the user can select a new one. You can add a spinner to your layout with the Spinner object.</item>
+        <item> The Android multimedia framework includes support for playing variety of common media types, so that you can easily integrate audio, video and images into your applications. One of the most important components of the media framework is the MediaPlayer class.</item>
+        <item>This feature helps you to share the app with your friends and family.</item>
+        <item>If you want to give feedback to the developers, this feature help you to do so.</item>
+        <item>st of completion suggestions automatically while the user is typing. The list of suggestions is displayed in drop down menu. The user can choose an item from there to replace the content of edit box with.</item>
+
+    </string-array>
+
+</resources>
