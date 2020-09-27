@@ -31,7 +31,7 @@ public class MainActivity2 extends AppCompatActivity {
 
     private void writeCode(String s) {
         Typeface typ1 = Typeface.createFromAsset(getAssets(), "Messi/Aller_Bd.ttf");
-        if (s.equals("0")) {
+        if (s.equals("0")) {//DatePicker
             TextView t1 = (TextView) findViewById(R.id.t1);
             t1.setTypeface(typ1);
             t1.setTextColor(Color.WHITE);
@@ -49,7 +49,7 @@ public class MainActivity2 extends AppCompatActivity {
 
 
         }
-        if (s.equals("1")) {
+        if (s.equals("1")) {//TimePicker
             TextView t1 = (TextView) findViewById(R.id.t1);
             t1.setTypeface(typ1);
             t1.setTextColor(Color.WHITE);
@@ -66,7 +66,7 @@ public class MainActivity2 extends AppCompatActivity {
 
 
         }
-        if (s.equals("2")) {
+        if (s.equals("2")) {//AlertDialog
             TextView t1 = (TextView) findViewById(R.id.t1);
             t1.setTypeface(typ1);
             t1.setTextColor(Color.WHITE);
@@ -95,7 +95,7 @@ public class MainActivity2 extends AppCompatActivity {
 
 
         }
-        if (s.equals("3")) {
+        if (s.equals("3")) {//CustomToast
             TextView t1 = (TextView) findViewById(R.id.t1);
             t1.setTypeface(typ1);
             t1.setTextColor(Color.WHITE);
@@ -107,7 +107,7 @@ public class MainActivity2 extends AppCompatActivity {
                     "            t.setView(v);\n" +
                     "            t.show();\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
         }
-        if (s.equals("4")) {
+        if (s.equals("4")) {//Intent
             TextView t1 = (TextView) findViewById(R.id.t1);
             t1.setTypeface(typ1);
             t1.setTextColor(Color.WHITE);
@@ -124,7 +124,7 @@ public class MainActivity2 extends AppCompatActivity {
                     "        }\n\n\n\n\n\n\n");
 
         }
-        if (s.equals("5")) {
+        if (s.equals("5")) {//Getting Data from the class we intent
             TextView t1 = (TextView) findViewById(R.id.t1);
             t1.setTypeface(typ1);
             t1.setTextColor(Color.WHITE);
@@ -156,7 +156,7 @@ public class MainActivity2 extends AppCompatActivity {
                     "        }\n\n" +
                     "    }\n\n\n\n\n\n\n");
         }
-        if (s.equals("6")) {
+        if (s.equals("6")) {//CustomAdapter for listview
             TextView t1 = (TextView) findViewById(R.id.t1);
             t1.setTypeface(typ1);
             t1.setTextColor(Color.WHITE);
@@ -215,10 +215,258 @@ public class MainActivity2 extends AppCompatActivity {
                     "\n" +
                     "        return view;\n" +
                     "    }\n" +
-                    "}\n\n\n\n\n\n\n\n");
-        }
+                    "}\n\n\n\n\n\n\n\n"+
+                         "Code for Listview fil:\n\n\n"+
+                    "package com.example.a2ndptoject;\n" +
+                    "\n" +
+                    "import androidx.annotation.NonNull;\n" +
+                    "import androidx.appcompat.app.AppCompatActivity;\n" +
+                    "\n" +
+                    "import android.content.Intent;\n" +
+                    "import android.database.sqlite.SQLiteDatabase;\n" +
+                    "import android.os.Bundle;\n" +
+                    "import android.view.Gravity;\n" +
+                    "import android.view.LayoutInflater;\n" +
+                    "import android.view.Menu;\n" +
+                    "import android.view.MenuInflater;\n" +
+                    "import android.view.MenuItem;\n" +
+                    "import android.view.View;\n" +
+                    "import android.view.ViewGroup;\n" +
+                    "import android.view.Window;\n" +
+                    "import android.view.WindowManager;\n" +
+                    "import android.widget.AdapterView;\n" +
+                    "import android.widget.ArrayAdapter;\n" +
+                    "import android.widget.ListView;\n" +
+                    "import android.widget.SearchView;\n" +
+                    "import android.widget.Spinner;\n" +
+                    "import android.widget.Toast;\n" +
+                    "\n" +
+                    "public class MainActivity extends AppCompatActivity {\n" +
+                    " private ListView l1;\n" +
+                    "    ArrayAdapter<String> ad;\n" +
+                    "    private Spinner sp1;\n" +
+                    "    String c[];\n" +
+                    "    @Override\n" +
+                    "    protected void onCreate(Bundle savedInstanceState) {\n" +
+                    "        super.onCreate(savedInstanceState);\n" +
+                    "\n" +
+                    "        setContentView(R.layout.activity_main);\n" +
+                    "        Sqlh s=new Sqlh(this);\n" +
+                    "        SQLiteDatabase sql=s.getWritableDatabase();\n" +
+                    "\n" +
+                    "        l1=(ListView) findViewById(R.id.l1);\n" +
+                    "        getSupportActionBar().setDisplayShowHomeEnabled(true);\n" +
+                    "        getSupportActionBar().setLogo(R.drawable.as1);\n" +
+                    "        getSupportActionBar().setDisplayUseLogoEnabled(true);\n" +
+                    "       c=getResources().getStringArray(R.array.co);\n" +
+                    "         ad=new ArrayAdapter<String>(MainActivity.this,R.layout.sample,R.id.t1,c);\n" +
+                    "        l1.setAdapter(ad);\n" +
+                    "        setTitle(\"As Learning\");\n" +
+                    "\n" +
+                    "        l1.setOnItemClickListener(new AdapterView.OnItemClickListener() {\n" +
+                    "            @Override\n" +
+                    "            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {\n" +
+                    "                if(i==0)\n" +
+                    "                {\n" +
+                    "                    Intent in=new Intent(MainActivity.this,MainActivity2.class);\n" +
+                    "                    in.putExtra(\"va\",\"0\");\n" +
+                    "                    startActivity(in);\n" +
+                    "                }\n" +
+                    "                if(i==1)\n" +
+                    "                {\n" +
+                    "                    Intent in=new Intent(MainActivity.this,MainActivity2.class);\n" +
+                    "                    in.putExtra(\"va\",\"1\");\n" +
+                    "                    startActivity(in);\n" +
+                    "                }\n" +
+                    "                if(i==2)\n" +
+                    "                {\n" +
+                    "                    Intent in=new Intent(MainActivity.this,MainActivity2.class);\n" +
+                    "                    in.putExtra(\"va\",\"2\");\n" +
+                    "                    startActivity(in);\n" +
+                    "                }\n" +
+                    "                if(i==3)\n" +
+                    "                {\n" +
+                    "                    Intent in=new Intent(MainActivity.this,MainActivity2.class);\n" +
+                    "                    in.putExtra(\"va\",\"3\");\n" +
+                    "                    startActivity(in);\n" +
+                    "                }\n" +
+                    "                if(i==4)\n" +
+                    "                {\n" +
+                    "                    Intent in=new Intent(MainActivity.this,MainActivity2.class);\n" +
+                    "                    in.putExtra(\"va\",\"4\");\n" +
+                    "                    startActivity(in);\n" +
+                    "                }\n" +
+                    "                if(i==5)\n" +
+                    "                {\n" +
+                    "                    Intent in=new Intent(MainActivity.this,MainActivity2.class);\n" +
+                    "                    in.putExtra(\"va\",\"5\");\n" +
+                    "                    startActivity(in);\n" +
+                    "                }\n" +
+                    "                if(i==6)\n" +
+                    "                {\n" +
+                    "                    Intent in=new Intent(MainActivity.this,MainActivity2.class);\n" +
+                    "                    in.putExtra(\"va\",\"6\");\n" +
+                    "                    startActivity(in);\n" +
+                    "                }\n" +
+                    "                if(i==7)\n" +
+                    "                {\n" +
+                    "                    Intent in=new Intent(MainActivity.this,MainActivity2.class);\n" +
+                    "                    in.putExtra(\"va\",\"7\");\n" +
+                    "                    startActivity(in);\n" +
+                    "                }\n" +
+                    "                if(i==8) {\n" +
+                    "                    Intent in = new Intent(MainActivity.this, MainActivity2.class);\n" +
+                    "                    in.putExtra(\"va\", \"8\");\n" +
+                    "                    startActivity(in);\n" +
+                    "                }\n" +
+                    "                if(i==9)\n" +
+                    "                {\n" +
+                    "\n" +
+                    "                Intent in=new Intent(MainActivity.this,MainActivity2.class);\n" +
+                    "                    in.putExtra(\"va\",\"9\");\n" +
+                    "                    startActivity(in);\n" +
+                    "                }     if(i==10)\n" +
+                    "                {\n" +
+                    "                    Intent in=new Intent(MainActivity.this,MainActivity2.class);\n" +
+                    "                    in.putExtra(\"va\",\"10\");\n" +
+                    "                    startActivity(in);\n" +
+                    "                }\n" +
+                    "                if(i==11)\n" +
+                    "                {\n" +
+                    "                    Intent in=new Intent(MainActivity.this,MainActivity2.class);\n" +
+                    "                    in.putExtra(\"va\",\"11\");\n" +
+                    "                    startActivity(in);\n" +
+                    "                }\n" +
+                    "                if(i==12) {\n" +
+                    "                    Intent in = new Intent(MainActivity.this, MainActivity2.class);\n" +
+                    "                    in.putExtra(\"va\", \"12\");\n" +
+                    "                    startActivity(in);\n" +
+                    "                }\n" +
+                    "                if(i==13) {\n" +
+                    "                    Intent in = new Intent(MainActivity.this, MainActivity2.class);\n" +
+                    "                    in.putExtra(\"va\", \"13\");\n" +
+                    "                    startActivity(in);\n" +
+                    "                }\n" +
+                    "                if(i==14) {\n" +
+                    "                    Intent in = new Intent(MainActivity.this, MainActivity2.class);\n" +
+                    "                    in.putExtra(\"va\", \"14\");\n" +
+                    "                    startActivity(in);\n" +
+                    "                }\n" +
+                    "                if(i==15) {\n" +
+                    "                    Intent in = new Intent(MainActivity.this, MainActivity2.class);\n" +
+                    "                    in.putExtra(\"va\", \"14\");\n" +
+                    "                    startActivity(in);\n" +
+                    "                }\n" +
+                    "                if(i==16) {\n" +
+                    "                    Intent in = new Intent(MainActivity.this, MainActivity2.class);\n" +
+                    "                    in.putExtra(\"va\", \"16\");\n" +
+                    "                    startActivity(in);\n" +
+                    "                } if(i==17)\n" +
+                    "                {\n" +
+                    "                    Intent in=new Intent(MainActivity.this,MainActivity2.class);\n" +
+                    "                    in.putExtra(\"va\",\"17\");\n" +
+                    "                    startActivity(in);\n" +
+                    "                } if(i==18)\n" +
+                    "                {\n" +
+                    "                    Intent in=new Intent(MainActivity.this,MainActivity2.class);\n" +
+                    "                    in.putExtra(\"va\",\"18\");\n" +
+                    "                    startActivity(in);\n" +
+                    "                }\n" +
+                    "                if(i==19) {\n" +
+                    "                    Intent in = new Intent(MainActivity.this, MainActivity2.class);\n" +
+                    "                    in.putExtra(\"va\", \"19\");\n" +
+                    "                    startActivity(in);\n" +
+                    "                }\n" +
+                    "                if(i==20) {\n" +
+                    "                    Intent in = new Intent(MainActivity.this, MainActivity2.class);\n" +
+                    "                    in.putExtra(\"va\", \"20\");\n" +
+                    "                    startActivity(in);\n" +
+                    "                }\n" +
+                    "                if(i==21) {\n" +
+                    "                    Intent in = new Intent(MainActivity.this, MainActivity2.class);\n" +
+                    "                    in.putExtra(\"va\", \"21\");\n" +
+                    "                    startActivity(in);\n" +
+                    "                }\n" +
+                    "                if(i==22) {\n" +
+                    "                    Intent in = new Intent(MainActivity.this, MainActivity2.class);\n" +
+                    "                    in.putExtra(\"va\", \"22\");\n" +
+                    "                    startActivity(in);\n" +
+                    "                }\n" +
+                    "                if(i==23) {\n" +
+                    "                    Intent in = new Intent(MainActivity.this, MainActivity2.class);\n" +
+                    "                    in.putExtra(\"va\", \"23\");\n" +
+                    "                    startActivity(in);\n" +
+                    "                }\n" +
+                    "                if(i==24) {\n" +
+                    "                    Intent in = new Intent(MainActivity.this, MainActivity2.class);\n" +
+                    "                    in.putExtra(\"va\", \"24\");\n" +
+                    "                    startActivity(in);\n" +
+                    "                }\n" +
+                    "                if(i==25) {\n" +
+                    "                    Intent in = new Intent(MainActivity.this, MainActivity2.class);\n" +
+                    "                    in.putExtra(\"va\", \"25\");\n" +
+                    "                    startActivity(in);\n" +
+                    "                }\n" +
+                    "                if(i==26) {\n" +
+                    "                    Intent in = new Intent(MainActivity.this, MainActivity2.class);\n" +
+                    "                    in.putExtra(\"va\", \"26\");\n" +
+                    "                    startActivity(in);\n" +
+                    "                }\n" +
+                    "\n" +
+                    "\n" +
+                    "\n" +
+                    "            }\n" +
+                    "        });\n" +
+                    "\n" +
+                    "\n" +
+                    "    }\n" +
+                    "\n" +
+                    "    @Override\n" +
+                    "    public boolean onCreateOptionsMenu(Menu menu) {\n" +
+                    "           MenuInflater in=getMenuInflater();\n" +
+                    "           in.inflate(R.menu.menu,menu);\n" +
+                    "           MenuItem item=menu.findItem(R.id.sv1);\n" +
+                    "        SearchView sv1=(SearchView) item.getActionView();\n" +
+                    "        sv1.setOnQueryTextListener(new SearchView.OnQueryTextListener() {\n" +
+                    "            @Override\n" +
+                    "            public boolean onQueryTextSubmit(String s){\n" +
+                    "                return false;\n" +
+                    "            }\n" +
+                    "\n" +
+                    "            @Override\n" +
+                    "            public boolean onQueryTextChange(String s) {\n" +
+                    "                ad.getFilter().filter(s);\n" +
+                    "                return false;\n" +
+                    "            }\n" +
+                    "        });\n" +
+                    "\n" +
+                    "        return super.onCreateOptionsMenu(menu);\n" +
+                    "    }\n" +
+                    "\n" +
+                    "    @Override\n" +
+                    "    public boolean onOptionsItemSelected(@NonNull MenuItem item) {\n" +
+                    "        if(item.getItemId()==R.id.sh1) {\n" +
+                    "            Intent it = new Intent(Intent.ACTION_SEND);\n" +
+                    "            it.setType(\"text/plain\");\n" +
+                    "            String sub = \"Sharing As Learning App\";\n" +
+                    "            String b = \"Click the link abid to download the app\";\n" +
+                    "            it.putExtra(Intent.EXTRA_SUBJECT, sub);\n" +
+                    "            it.putExtra(Intent.EXTRA_TEXT, b);\n" +
+                    "            startActivity(it);\n" +
+                    "        }\n" +
+                    "        else if(item.getItemId()==R.id.f1){\n" +
+                    "            Intent in =new Intent(MainActivity.this,MainActivity3.class);\n" +
+                    "            startActivity(in);\n" +
+                    "        }\n" +
+                    "\n" +
+                    "        return super.onOptionsItemSelected(item);\n" +
+                    "    }\n" +
+                    "}");
 
-        if (s.equals("7")) {
+
+     }
+
+        if (s.equals("7")) {//Creating Menu
             TextView t1 = (TextView) findViewById(R.id.t1);
             t1.setTypeface(typ1);
             t1.setTextColor(Color.WHITE);
@@ -255,7 +503,7 @@ public class MainActivity2 extends AppCompatActivity {
 
 
         }
-        if (s.equals("8")) {
+        if (s.equals("8")) {//Action Bar Seacrh View
             TextView t1 = (TextView) findViewById(R.id.t1);
             t1.setTypeface(typ1);
             t1.setTextColor(Color.WHITE);
@@ -293,7 +541,7 @@ public class MainActivity2 extends AppCompatActivity {
                 "    </item>\n" +
                 "</menu>\n\n\n\n\n\n\n");
     }
-        if (s.equals("9")) {
+        if (s.equals("9")) {//Making Website as Android App
             TextView t1 = (TextView) findViewById(R.id.t1);
             t1.setTypeface(typ1);
             t1.setTextColor(Color.WHITE);
@@ -325,7 +573,7 @@ public class MainActivity2 extends AppCompatActivity {
                     "\n" +
                     "</manifest>\n\n\n\n\n\n\n");
         }
-        if (s.equals("10")) {
+        if (s.equals("10")) {//Spinner
             TextView t1 = (TextView) findViewById(R.id.t1);
             t1.setTypeface(typ1);
             t1.setTextColor(Color.WHITE);
@@ -342,7 +590,7 @@ public class MainActivity2 extends AppCompatActivity {
                     "\n" +
                     "          }\n\n" +
                     "      });\n\n\n\n\n\n\n");
-        }  if (s.equals("11")) {
+        }  if (s.equals("11")) {//Mediaplayer
             TextView t1 = (TextView) findViewById(R.id.t1);
             t1.setTypeface(typ1);
             t1.setTextColor(Color.WHITE);
@@ -396,7 +644,7 @@ public class MainActivity2 extends AppCompatActivity {
                     "    }\n\n\n\n\n\n\n\n" );
 
         }
-        if (s.equals("12")) {
+        if (s.equals("12")) {//Sharing App
             TextView t1 = (TextView) findViewById(R.id.t1);
             t1.setTypeface(typ1);
             t1.setTextColor(Color.WHITE);
@@ -429,7 +677,7 @@ public class MainActivity2 extends AppCompatActivity {
                     "\n\n  return super.onOptionsItemSelected(item);\n" +
                     "    }\n\n\n\n\n\n\n");
         }
-        if (s.equals("13")) {
+        if (s.equals("13")) {//Feedback
             TextView t1 = (TextView) findViewById(R.id.t1);
             t1.setTypeface(typ1);
             t1.setTextColor(Color.WHITE);
@@ -546,7 +794,7 @@ public class MainActivity2 extends AppCompatActivity {
                     "    }\n" +
                     "}\n\n\n\n\n\n\n");
         }
-        if (s.equals("14")) {
+        if (s.equals("14")) {//Auto Complete TextView
             TextView t1 = (TextView) findViewById(R.id.t1);
             t1.setTypeface(typ1);
             t1.setTextColor(Color.WHITE);
@@ -587,11 +835,11 @@ public class MainActivity2 extends AppCompatActivity {
                     "        act1.setAdapter(ad);\n" +
                     "    }\n\n}\n\n\n\n\n\n\n");
         }
-        if (s.equals("15")) {
+        if (s.equals("15")) {/Expandable Listview
             TextView t1 = (TextView) findViewById(R.id.t1);
             t1.setTypeface(typ1);
             t1.setTextColor(Color.WHITE);
-            t1.setText("Code fro Xml File:\n\n" +
+            t1.setText("Code for Xml File:\n\n" +
                     "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" +
                     "<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\n" +
                     "    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\n" +
@@ -839,7 +1087,7 @@ public class MainActivity2 extends AppCompatActivity {
                     "\n" +
                     "}\n\n\n\n\n\n\n");
         }
-        if (s.equals("16")) {
+        if (s.equals("16")) {//Fragment
             TextView t1 = (TextView) findViewById(R.id.t1);
             t1.setTypeface(typ1);
             t1.setTextColor(Color.WHITE);
@@ -975,7 +1223,7 @@ public class MainActivity2 extends AppCompatActivity {
                     "    }\n" +
                     "}\n\n\n\n\n\n\n");
         }
-        if (s.equals("17")) {
+        if (s.equals("17")) {//CardView
             TextView t1 = (TextView) findViewById(R.id.t1);
             t1.setTypeface(typ1);
             t1.setTextColor(Color.WHITE);
@@ -1052,7 +1300,7 @@ public class MainActivity2 extends AppCompatActivity {
                     "        });\n" +
                     "    }\n\n\n\n");
         }
-        if (s.equals("18")) {
+        if (s.equals("18")) {//View Pager for Swipe tab
             TextView t1 = (TextView) findViewById(R.id.t1);
             t1.setTypeface(typ1);
             t1.setTextColor(Color.WHITE);
@@ -1184,7 +1432,7 @@ public class MainActivity2 extends AppCompatActivity {
                     "    }\n" +
                     "}\n\n\n\n\n");
         }
-        if (s.equals("19")) {
+        if (s.equals("19")) {//Shared Prefernce
             TextView t1 = (TextView) findViewById(R.id.t1);
             t1.setTypeface(typ1);
             t1.setTextColor(Color.WHITE);
@@ -1197,7 +1445,7 @@ public class MainActivity2 extends AppCompatActivity {
                     "To show Data:\n\n\n" +
                     "  SharedPreferences sh=getSharedPreferences(\"color\", Context.MODE_PRIVATE);\n" +
                     "        int c=sh.getInt(\"red\",Color.WHITE);\n\n\n\n");
-        }  if (s.equals("20")) {
+        }  if (s.equals("20")) {//Data Saving File
             TextView t1 = (TextView) findViewById(R.id.t1);
             t1.setTypeface(typ1);
             t1.setTextColor(Color.WHITE);
@@ -1307,7 +1555,7 @@ public class MainActivity2 extends AppCompatActivity {
                     "        }\n" +
                     "    }\n" +
                     "}\n\n\n\n\n");
-        }  if (s.equals("21")) {
+        }  if (s.equals("21")) {//Creating Table(In Database Java file)
             TextView t1 = (TextView) findViewById(R.id.t1);
             t1.setTypeface(typ1);
             t1.setTextColor(Color.WHITE);
@@ -1370,7 +1618,7 @@ public class MainActivity2 extends AppCompatActivity {
                     " Sqh sql=new Sqh(this);\n" +
                     "        SQLiteDatabase sql1=sql.getWritableDatabase();\n\n\n\n\n");
         }
-        if (s.equals("22")) {
+        if (s.equals("22")) {//Inserting Data(In dataBase class)
             TextView t1 = (TextView) findViewById(R.id.t1);
             t1.setTypeface(typ1);
             t1.setTextColor(Color.WHITE);
@@ -1400,7 +1648,7 @@ public class MainActivity2 extends AppCompatActivity {
                     "\n" +
                     "                 }\n\n\n\n");
         }
-        if (s.equals("23")) {
+        if (s.equals("23")) {//Deleting Data
             TextView t1 = (TextView) findViewById(R.id.t1);
             t1.setTypeface(typ1);
             t1.setTextColor(Color.WHITE);
@@ -1420,7 +1668,7 @@ public class MainActivity2 extends AppCompatActivity {
                     "   Boolean b= sql.updateData(e1.getText().toString(),e2.getText().toString(),e3.getText().toString(),e4.getText().toString(),e5.getText().toString());\n" +
                     "       \n\n\n\n\n");
         }
-        if (s.equals("24")) {
+        if (s.equals("24")) {//Reading Data 
             TextView t1 = (TextView) findViewById(R.id.t1);
             t1.setTypeface(typ1);
             t1.setTextColor(Color.WHITE);
@@ -1431,7 +1679,7 @@ public class MainActivity2 extends AppCompatActivity {
                     "Code in Database calling Java file:\n\n\n"+
                     "   int p= sql.deleteData(e3.getText().toString());\n\n\n\n");
         }
-        if (s.equals("25")) {
+        if (s.equals("25")) {//Recycler View
             TextView t1 = (TextView) findViewById(R.id.t1);
             t1.setTypeface(typ1);
             t1.setTextColor(Color.WHITE);
